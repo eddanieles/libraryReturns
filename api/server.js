@@ -13,8 +13,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../webApp/dist')));
 
 app.get('/api/books', (req, res) => {
-    console.log(res);
-    console.log(books);
     res.json(books);
 });
 
