@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../my-app/dist')));
 
 app.get('/api/books', (req, res) => {
+    console.log(books);
     res.json(books);
 });
 
@@ -19,7 +20,7 @@ app.post('/api/book', (req, res) => {
     const book = req.body.book;
     book.id = uuidv4();
     books.push(book);
-    res.json("book returned@");
+    res.json("book returned");
 });
 
 app.get('/', (req, res) => {
