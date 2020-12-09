@@ -64,16 +64,14 @@ target="_blank"> <fieldset>
 </template>
 
 <script>
-
+import { createBook } from '../services/BookService'
 export default {
   data: () => ({
       formValues: {}
   }),
   methods: {
       handleSubmit() {
-        console.log(this.formValues)
-        const payload = this.formValues
-        this.$emit('createBook', payload)
+        createBook(this.formValues)
       }
   }
 }
