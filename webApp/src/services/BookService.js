@@ -1,6 +1,11 @@
 export async function getAllBooks() {
 
-    const response = await fetch('/api/books');
+    const response = await fetch('/api/books', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    });
     return await response.json();
 }
 
