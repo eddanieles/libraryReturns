@@ -1,7 +1,6 @@
 <template>
   <div class="books">
-    <h1>Books</h1>
-    <button @click='getAllBooks()' type="button" class="btn btn-warning">Get all Books</button>
+    <h1>Returned Books</h1>
     <div>{{books}}</div>
   </div>
 </template>
@@ -22,9 +21,6 @@
           this.books = response
         })
       }
-      // getAllBooks() {
-      //   this.$emit('getAllBooks')
-      // },
     },
     mounted () {
       this.getAllBooks();

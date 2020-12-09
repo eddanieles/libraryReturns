@@ -73,6 +73,7 @@ export default {
       createBook() {
           const payload = this.formValues;
           this.$emit('createUser', payload)
+          console.log(JSON.stringify(payload));
       }
   }
 }
