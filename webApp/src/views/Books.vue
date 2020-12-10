@@ -24,14 +24,14 @@
     },
     methods: 
     {
-      getAllBooks() {
+      initializeBooks() {
         getAllBooks().then(response => {
           this.books = response
         })
       }
     },
     mounted () {
-      this.getAllBooks();
+      this.initializeBooks();
     }
   }
 </script>
