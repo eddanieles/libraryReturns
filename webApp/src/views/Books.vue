@@ -1,8 +1,7 @@
 <template>
   <div class="books">
-    <h1>Returned Books</h1>
     <fieldset>      
-      <legend>Our Books:</legend>
+      <legend>List for Returned Books:</legend>
       <div>
         <ul>
           <li v-for="book in books" :key="book.id">

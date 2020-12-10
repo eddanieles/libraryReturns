@@ -2,7 +2,10 @@
 
 <template>
   <div>
+    <fieldset>
+            <legend>Library at use:</legend>
       <aggregrate />
+    </fieldset>
   </div>
 </template>
 
@@ -15,5 +18,7 @@ export default {
 </script>
 
 <style>
-
+  fieldset {
+    text-align: left;
+  }
 </style>
