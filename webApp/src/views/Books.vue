@@ -1,7 +1,16 @@
 <template>
   <div class="books">
     <h1>Returned Books</h1>
-    <div>{{books}}</div>
+    <fieldset>      
+      <legend>Our Books:</legend>
+      <div>
+        <ul>
+          <li v-for="book in books" :key="book.id">
+            {{book}}
+          </li>
+        </ul>
+      </div>
+    </fieldset>
   </div>
 </template>
 
@@ -17,7 +26,6 @@
     {
       getAllBooks() {
         getAllBooks().then(response => {
-          console.log(response)
           this.books = response
         })
       }
@@ -27,3 +35,13 @@
     }
   }
 </script>
+
+<style>
+  ul {
+    list-style: none;
+  }
+  li {
+    /* border: 1px solid black; */
+    margin: 10px;
+  }
+</style>

@@ -2,12 +2,11 @@
 
 <template>
   <div>
-      <create-book @createBook="bookCreate($event)" />
+      <create-book />
   </div>
 </template>
 
 <script>
-import { createBook } from '../services/BookService'
 import CreateBook from '../components/CreateBook.vue'
 
 export default {
@@ -16,15 +15,6 @@ export default {
     return {
           books: []
       }
-  },
-  methods: {
-    bookCreate(data) {
-        console.log('data:::', data)
-        createBook(data).then(response => {
-            console.log(response);
-            this.getAllBooks();
-        });
-    }
   }
 }
 </script>

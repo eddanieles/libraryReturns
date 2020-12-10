@@ -2,19 +2,24 @@ package kinChallenge;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class submitForm {
-
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+	
+	WebDriver driver;
+	
+	public void LaunchBrowser() {
+		
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
-		
-		WebDriver driver = new ChromeDriver();
-		
+		driver = new ChromeDriver();
 		driver.get("http://localhost:8080/");
 		
+		
+	}
+	
+	public void fillForm() {
 		driver.findElement(By.id("formulate---1")).sendKeys("John Doe");
 		
 		driver.findElement(By.cssSelector("label[for='formulate---2_yes']")).click();
@@ -35,10 +40,37 @@ public class submitForm {
 		
 		Select rating = new Select(driver.findElement(By.id("formulate---11")));
 		rating.selectByIndex(3);
+	}
+	
+	public void clickSubmit() {
+		driver.findElement(By.cssSelector("button[name='Submit']")).click();
+	}
+	
+	public void checkBookCreated() {
+		driver.findElement(By.linkText("Books")).click();
+		WebElement lastBook = driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/fieldset/div/ul/li[last()]"));
+		lastBook.getText().contains("{ 'townResident': 'yes', 'amountRead': 'unread', 'timeToRead': 'twoTo3weeks', 'rating': 'two', 'name': 'John Doe', 'title': 'Goosebumps', 'author': 'RL Stein', 'numberOfPages': '265', 'dewey': '000.11.333', ");
+	}
+	
+	public void close() {
+		driver.quit();
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
 		
-		Thread.sleep(2000);
+		submitForm obj = new submitForm();
+		obj.LaunchBrowser();
+		obj.fillForm();
+		Thread.sleep(2000);	
 		
-		driver.close();
+		obj.clickSubmit();
+		Thread.sleep(1000);	
+		
+		obj.checkBookCreated();
+		Thread.sleep(2000);	
+		
+		obj.close();
 	}
 
 }
