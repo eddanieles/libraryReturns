@@ -1,10 +1,15 @@
 <template>
     <div>
         <div>
-            {{books.map(book => book.numberOfPages)
+            Total Pages Read: {{books.map((book) => {
+                        if (book.amountRead === "unread") book.numberOfPages = 0;
+                        else if (book.amountRead === "partially") book.numberOfPages = parseInt(book.numberOfPages)/2;
+                        return book.numberOfPages
+                    })
                     .reduce((accumulator, currentValue, currentIndex, array) => { 
                         return parseInt(accumulator) + parseInt(currentValue)
-                        })}}
+                    })
+            }}
         </div>
         <div>{{cats["500"]}}</div>
     </div>
