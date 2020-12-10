@@ -1,7 +1,16 @@
 <template>
   <div class="books">
     <h1>Returned Books</h1>
-    <div>{{books}}</div>
+    <fieldset>      
+      <legend>Our Books:</legend>
+      <div>
+        <ul>
+          <li v-for="book in books" :key="book.id">
+            {{book}}
+          </li>
+        </ul>
+      </div>
+    </fieldset>
   </div>
 </template>
 
