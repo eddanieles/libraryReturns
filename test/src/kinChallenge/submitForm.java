@@ -17,9 +17,7 @@ public class submitForm {
 		
 		driver.findElement(By.id("formulate---1")).sendKeys("John Doe");
 		
-//		driver.findElement(By.id("formulate---2_yes")).click();
-		driver.findElement(By.xpath("/html/body/div/div[2]/form/fieldset/form/div[2]/div/div/div[1]/div/div")).click();
-		
+		driver.findElement(By.cssSelector("label[for='formulate---2_yes']")).click();
 		
 		driver.findElement(By.id("formulate---5")).sendKeys("Goosebumps");
 		

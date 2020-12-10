@@ -5,7 +5,7 @@
 target="_blank"> <fieldset>
 <legend>Book Return:</legend>
  <FormulateForm
-        v-model="formValues" @submit="createBook"
+        v-model="formValues" @submit="handleSubmit"
         >
         <FormulateInput
             name="name"
@@ -62,20 +62,23 @@ target="_blank"> <fieldset>
 </template>
 
 <script>
+import { createBook } from '../services/BookService'
+
 export default {
     name: 'CreateBook',
-  data() {
-    return {
-        formValues: {}
+    data() {
+        return {
+            formValues: {}
+        }
+    },
+    methods: {
+        handleSubmit() {
+            // const payload = this.formValues;
+            // this.$emit('createUser', payload)
+            // console.log(JSON.stringify(payload));
+            createBook(this.formValues);
+        }
     }
-  },
-  methods: {
-      createBook() {
-          const payload = this.formValues;
-          this.$emit('createUser', payload)
-          console.log(JSON.stringify(payload));
-      }
-  }
 }
 </script>
 
