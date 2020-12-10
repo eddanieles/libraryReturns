@@ -48,7 +48,12 @@
                         return parseInt(accumulator) + parseInt(currentValue)
                     });
 
-                    this.pagesReadByCatergory = Object.entries(_.groupBy(response, 'category')).flat();
+                    let sections = Object.entries(_.groupBy(response, 'category')).flat();
+                    this.pagesReadByCatergory = sections[1].reduce((accumulator, currentValue) => { 
+                        return parseInt(accumulator.pagesRead) + parseInt(currentValue.pagesRead)
+                    });
+
+    
                 });
                 
             }
