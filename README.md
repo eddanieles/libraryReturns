@@ -10,7 +10,7 @@ The repo includes three separate projects that work together with each other:
 
 ### to run code
 1. clone repo
-2. go to repo folder via terminal
+2. cd into repo folder via terminal
 3. run web application via terminal:
     ```
     cd webApp
