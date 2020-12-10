@@ -17,7 +17,6 @@
     {
       getAllBooks() {
         getAllBooks().then(response => {
-          console.log(response)
           this.books = response
         })
       }
