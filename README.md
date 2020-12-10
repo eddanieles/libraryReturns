@@ -30,6 +30,8 @@ The initial data is static and any submitted data is stored on a localhost:3080 
 ---
 
 ### to run selenium webdriver test
+The app is not deployed, so you need to have the web application and api running on your local machine, in order to run the test automation.
+
 1. go to code editor ide (I like esclipse)
 2. open test file (located in automation/src/automation/submitForm.java)
 3. compile and run file (you will need to install JavaSE-1.8 JRE library in your Build path, see [this article](https://stackoverflow.com/questions/26371055/eclipse-installing-a-new-jre-java-se-8-1-8-0) for assistance)
