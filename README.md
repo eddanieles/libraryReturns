@@ -4,7 +4,7 @@ Creating this project certainly had it's difficulties. However, I am happy to sa
 The repo includes three separate projects that work together with each other:
 - a front end web application created with Vue JS
 - a node JS backend
-- a testing stack create in Java using a Selenium framework
+- a testing stack create in Java using Selenium webdriver
 
 ---
 
@@ -27,7 +27,7 @@ The repo includes three separate projects that work together with each other:
 
 ---
 
-### to run selenium test
+### to run selenium webdriver test
 1. go to code editor ide (I like esclipse)
 2. open test file (located in test/src/kinChallenge/submitForm.java)
 3. compile and run file (you will need to install JavaSE-1.8 JRE library in your Build path, see [this article](https://stackoverflow.com/questions/26371055/eclipse-installing-a-new-jre-java-se-8-1-8-0) for assistance)
