@@ -17,6 +17,7 @@
                         name="townResident"
                         label="Town Resident?"
                         :options="{yes: 'Yes', no: 'No'}"
+                        value="yes"
                     />
                     <FormulateInput
                         name="title"
@@ -55,8 +56,9 @@
                     />
                     <FormulateInput
                         type="submit"
-                        label="Submit"
+                        name="Submit"
                     />
+                    <div class="submitText">{{submissionText}}</div>
                 </FormulateForm>
         </fieldset> 
     </form>
@@ -70,12 +72,20 @@ export default {
     name: 'CreateBook',
     data() {
         return {
-            formValues: {}
+            formValues: {},
+            submissionText: ""
         }
     },
     methods: {
         handleSubmit() {
             createBook(this.formValues);
+            this.formValues = {
+                "amountRead": "read", 
+                "timeToRead": "less_week", 
+                "rating": "five", 
+                "title": ""
+            };
+            this.submissionText = "Please enter another book to return."
         }
     }
 }
@@ -84,5 +94,10 @@ export default {
 <style>
     .home {
         text-align: left;
+    }
+    .submitText {
+        font: italic;
+        font-size: smaller;
+        margin: 0px;
     }
 </style>
