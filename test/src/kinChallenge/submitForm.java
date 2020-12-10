@@ -6,15 +6,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class submitForm {
-
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
+	
+	WebDriver driver;
+	
+	public void LaunchBrowser() {
+		
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
-		
-		WebDriver driver = new ChromeDriver();
-		
+		driver = new ChromeDriver();
 		driver.get("http://localhost:8080/");
 		
+		
+	}
+	
+	public void fillForm() {
 		driver.findElement(By.id("formulate---1")).sendKeys("John Doe");
 		
 		driver.findElement(By.cssSelector("label[for='formulate---2_yes']")).click();
@@ -35,10 +39,31 @@ public class submitForm {
 		
 		Select rating = new Select(driver.findElement(By.id("formulate---11")));
 		rating.selectByIndex(3);
+	}
+	
+	public void clickSubmit() {
+		driver.findElement(By.cssSelector("button[name='Submit']")).click();
+	}
+	
+	public void checkBookCreated() {
+		driver.findElement(By.linkText("Books")).click();
+	}
+	
+	public void close() {
+		driver.quit();
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
 		
-		Thread.sleep(2000);
-		
-		driver.close();
+		submitForm obj = new submitForm();
+		obj.LaunchBrowser();
+		obj.fillForm();
+		Thread.sleep(2000);	
+//		obj.clickSubmit();
+		obj.checkBookCreated();
+		Thread.sleep(2000);	
+		obj.close();
 	}
 
 }
