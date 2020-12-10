@@ -21,7 +21,7 @@ The repo includes three separate projects with work together with each other:
 6. to run selenium test
     1. go to editor ide (I like esclipse)
     2. open test file (test file is located in the test/src/kinChallenge/submitForm.java)
-    3. compile and run file (you will need to install JavaSE-1.8 JRE library in your Build path, see [this article] (https://stackoverflow.com/questions/26371055/eclipse-installing-a-new-jre-java-se-8-1-8-0) for assistance)
+    3. compile and run file (you will need to install JavaSE-1.8 JRE library in your Build path, see [this article](https://stackoverflow.com/questions/26371055/eclipse-installing-a-new-jre-java-se-8-1-8-0) for assistance)
     4. after running the test, an automated Chrome browser window should open and go through common user actions
     5. if the Chrome browser window closes by itself, the tests were successfully
 
