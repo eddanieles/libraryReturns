@@ -25,6 +25,8 @@ The repo includes three separate projects that work together with each other:
     ```
 5. you can now go to the web app via the browser by going to [localhost:8080](http://localhost:8080/)
 
+The initial data is static and any submitted data is stored on a localhost:3080 temporarily. Restarting the api project will delete any submitted data.
+ 
 ---
 
 ### to run selenium webdriver test
