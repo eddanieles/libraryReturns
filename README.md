@@ -1,7 +1,7 @@
 # kin QA Challenge
 Creating this project certainly had it's difficulties. However, I am happy to say that is it a fully functioning app with a testing stack. I wish I had more time to update the css but it's usable.
 
-The repo includes three separate projects with work together with each other:
+The repo includes three separate projects that work together with each other:
 - a front end web application created with Vue JS
 - a node JS backend
 - a testing stack create in Java using a Selenium framework
