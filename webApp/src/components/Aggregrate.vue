@@ -3,7 +3,7 @@
         <div>
             Total Pages Read: {{totalPagesRead}}
         </div>
-        <div>**category example: {{pagesReadByCatergory}}</div>
+        <div>Pages Read per Category: {{pagesReadByCatergory}}</div>
     </div>
 </template>
 
@@ -48,11 +48,19 @@
                         return parseInt(accumulator) + parseInt(currentValue)
                     });
 
-                    let sections = Object.entries(_.groupBy(response, 'category')).flat();
-                    this.pagesReadByCatergory = sections[1].reduce((accumulator, currentValue) => { 
-                        return parseInt(accumulator.pagesRead) + parseInt(currentValue.pagesRead)
-                    });
-
+                    
+                    this.pagesReadByCatergory = Object.entries(_.groupBy(response, 'category'))
+                        .map(section => {  
+                            return {name: section[0], total: section[1]}
+                        })
+                        .map(indy => {
+                            if (indy.total.length > 1) {
+                                indy.total = indy.total.reduce((a, b) => a.pagesRead + b.pagesRead)
+                            } else if (indy.total.length === 1) {
+                                indy.total = indy.total[0].pagesRead;
+                            }
+                            return indy;
+                        });
     
                 });
                 
