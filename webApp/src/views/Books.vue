@@ -35,3 +35,13 @@
     }
   }
 </script>
+
+<style>
+  ul {
+    list-style: none;
+  }
+  li {
+    /* border: 1px solid black; */
+    margin: 10px;
+  }
+</style>
