@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Littlefoot Library</h1>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/returnBook">Make Return</router-link> |
@@ -11,16 +12,13 @@
 
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
-  text-align: center;
-}
-
-.books {
-        text-align: left;
-    }
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
+  #nav {
+    text-align: center;
+  }
 </style>

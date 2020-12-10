@@ -1,10 +1,9 @@
 <template>
   <div class="home">
-    <h1>Littlefoot Library</h1>
     <form accept-charset="UTF-8" action="submit_action" autocomplete="off" method="GET"
     target="_blank"> 
         <fieldset>
-            <legend>Book Return:</legend>
+            <legend>Book Return Form:</legend>
             <FormulateForm
                     v-model="formValues" @submit="handleSubmit"
                     >
@@ -92,9 +91,6 @@ export default {
 </script>
 
 <style>
-    .home {
-        text-align: left;
-    }
     .submitText {
         font: italic;
         font-size: smaller;
