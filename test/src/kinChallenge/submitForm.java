@@ -2,6 +2,7 @@ package kinChallenge;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -47,6 +48,8 @@ public class submitForm {
 	
 	public void checkBookCreated() {
 		driver.findElement(By.linkText("Books")).click();
+		WebElement lastBook = driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/fieldset/div/ul/li[last()]"));
+		lastBook.getText().contains("{ 'townResident': 'yes', 'amountRead': 'unread', 'timeToRead': 'twoTo3weeks', 'rating': 'two', 'name': 'John Doe', 'title': 'Goosebumps', 'author': 'RL Stein', 'numberOfPages': '265', 'dewey': '000.11.333', ");
 	}
 	
 	public void close() {
@@ -60,9 +63,13 @@ public class submitForm {
 		obj.LaunchBrowser();
 		obj.fillForm();
 		Thread.sleep(2000);	
-//		obj.clickSubmit();
+		
+		obj.clickSubmit();
+		Thread.sleep(1000);	
+		
 		obj.checkBookCreated();
 		Thread.sleep(2000);	
+		
 		obj.close();
 	}
 
