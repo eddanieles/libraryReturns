@@ -48,8 +48,8 @@
                         return parseInt(accumulator) + parseInt(currentValue)
                     });
 
-                    this.pagesReadByCatergory = Object.entries(_.groupBy(response, 'category'));
-                    });
+                    this.pagesReadByCatergory = Object.entries(_.groupBy(response, 'category')).flat();
+                });
                 
             }
         },
