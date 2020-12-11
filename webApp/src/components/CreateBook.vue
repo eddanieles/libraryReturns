@@ -5,8 +5,9 @@
         <fieldset>
             <legend>Book Return Form:</legend>
             <FormulateForm
-                    v-model="formValues" @submit="handleSubmit"
-                    >
+                v-model="formValues" 
+                @submit="handleSubmit" 
+                name="bookReturnForm">
                     <FormulateInput
                         name="name"
                         label="Your Name:"
@@ -61,8 +62,8 @@
                         type="submit"
                         name="Submit"
                     />
-                    <div class="submitText">{{submissionText}}</div>
-                </FormulateForm>
+                <div class="submitText">{{submissionText}}</div>
+            </FormulateForm>
         </fieldset> 
     </form>
   </div>
@@ -82,12 +83,12 @@ export default {
     methods: {
         handleSubmit() {
             createBook(this.formValues);
-            this.formValues = {
+            this.$formulate.reset("bookReturnForm", {
                 "amountRead": "read", 
                 "timeToRead": "less_week", 
-                "rating": "five", 
-                "title": ""
-            };
+                "rating": "five",
+                "townResident": "yes"
+            });
             this.submissionText = "Please enter another book to return."
         }
     }

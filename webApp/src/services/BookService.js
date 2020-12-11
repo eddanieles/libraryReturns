@@ -36,6 +36,8 @@ export function findCategory(book) {
 }
 
 export function findPagesRead(book) {
+    book.numberOfPages ? book.numberOfPages : book.numberOfPages = 0;
+
     if (book.amountRead === "unread") book.pagesRead = 0;
     else if (book.amountRead === "partially") book.pagesRead = parseInt(book.numberOfPages) / 2;
     else if (book.amountRead === "read") book.pagesRead = parseInt(book.numberOfPages);
