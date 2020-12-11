@@ -7,6 +7,8 @@ public class RunTest {
 		TestCases obj = new TestCases();
 		obj.launchBrowser();
 		
+		obj.checkPagesRead();
+		
 		obj.fillForm();
 		Thread.sleep(2000);	
 		
@@ -15,6 +17,8 @@ public class RunTest {
 		
 		obj.checkBookCreated();
 		Thread.sleep(2000);	
+		
+		obj.checkPagesRead();
 		
 		obj.goToHomepage();
 		Thread.sleep(2000);	

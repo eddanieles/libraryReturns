@@ -1,10 +1,10 @@
 <template>
     <div>
         <div>
-            Total Pages Read: {{totalPagesRead}}
+            Total Pages Read: <div id="totalPagesRead">{{totalPagesRead}}</div> 
         </div><br>
         <div>Pages Read per Category:</div>
-        <ul>
+        <ul id="pagesReadByCategory">
             <li v-for="index in pagesReadByCatergory" :key="index.category">
                 {{index.name}} - {{index.total}}
             </li>
@@ -43,7 +43,7 @@
                         })
                         .map(indy => {
                             if (indy.total.length > 1) {
-                                indy.total = parseInt(indy.total.reduce((a, b) => a.pagesRead + b.pagesRead));
+                                indy.total = parseInt(indy.total.map(a => a.pagesRead).reduce((a, b) => a + b));
                             } else if (indy.total.length === 1) {
                                 indy.total = parseInt(indy.total[0].pagesRead);
                             }
@@ -52,11 +52,10 @@
                         .filter(indy => {
                             if (indy.total > 0) return indy;
                         });
-    
                 });
                 
             }
-        },
+        }, 
         mounted () {
             this.initializeBooks();
 

@@ -16,13 +16,15 @@ public class TestCases {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver = new ChromeDriver();
 		driver.get("http://localhost:8080/");
+		
 		Thread.sleep(1000);
-		driver.navigate().to("http://localhost:8080/returnBook");
 		
 		System.out.println("Sucessfully launched browser!");
 	}
 	
 	public void fillForm() {
+		driver.navigate().to("http://localhost:8080/returnBook");
+		
 		driver.findElement(By.id("formulate--returnBook-1")).sendKeys("John Doe");
 		
 		driver.findElement(By.cssSelector("label[for='formulate--returnBook-2_yes']")).click();
@@ -51,6 +53,7 @@ public class TestCases {
 		driver.findElement(By.cssSelector("button[name='Submit']")).click();
 		
 		System.out.println("Form submitted!");
+		System.out.println("Total pages read should have added 265 from the form value that was submitted.");
 	}
 	
 	public void checkBookCreated() {
@@ -67,6 +70,16 @@ public class TestCases {
 		driver.navigate().to("http://localhost:8080/");
 		
 		System.out.println("Able to go to homepage!");
+	}
+	
+	public void checkPagesRead() {
+		driver.navigate().to("http://localhost:8080/");
+		String pagesRead = driver.findElement(By.id("totalPagesRead")).getText();
+		
+		System.out.println("Total number of pages read: " + pagesRead);
+		
+		String categoryPagesRead = driver.findElement(By.xpath("//*[@id=\"pagesReadByCategory\"]/li[last()]")).getText();
+		System.out.println("Last pages read by category text: " + categoryPagesRead);
 	}
 	
 	public void close() {
