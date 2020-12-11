@@ -4,7 +4,7 @@
             Total Pages Read: <div id="totalPagesRead">{{totalPagesRead}}</div> 
         </div><br>
         <div>Pages Read per Category:</div>
-        <ul>
+        <ul id="pagesReadByCategory">
             <li v-for="index in pagesReadByCatergory" :key="index.category">
                 {{index.name}} - {{index.total}}
             </li>
@@ -52,11 +52,10 @@
                         .filter(indy => {
                             if (indy.total > 0) return indy;
                         });
-    
                 });
                 
             }
-        },
+        }, 
         mounted () {
             this.initializeBooks();
 

@@ -77,6 +77,9 @@ public class TestCases {
 		String pagesRead = driver.findElement(By.id("totalPagesRead")).getText();
 		
 		System.out.println("Total number of pages read: " + pagesRead);
+		
+		String categoryPagesRead = driver.findElement(By.xpath("//*[@id=\"pagesReadByCategory\"]/li[last()]")).getText();
+		System.out.println("Last pages read by category text: " + categoryPagesRead);
 	}
 	
 	public void close() {
