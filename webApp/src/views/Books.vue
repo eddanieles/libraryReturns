@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import { getAllBooks } from '../services/BookService'
+  import { getAllBooks, getUItext } from '../services/BookService'
   export default {
     data() {
         return {
@@ -34,18 +34,7 @@
     {
       initializeBooks() {
         getAllBooks().then(response => {
-          let userAmountRead = {read: 'Finished', partially: 'Partially', unread: 'Not Read'};
-          let userTimeBorrowed = {less_week: 'Less then 1 week', twoTo3weeks: '2 to 3 weeks', morethen_4weeks: '4 weeks or more'};
-          let userRating = {five: '★★★★★', four: '★★★★', three: '★★★', two: '★★', one: '★'};
-          this.books = response.map(book => {
-            
-            if (book.amountRead) book.amountRead = userAmountRead[book.amountRead];
-            if (book.rating) book.rating = userRating[book.rating];
-            if (book.timeToRead) book.timeToRead = userTimeBorrowed[book.timeToRead];
-
-            return book;
-
-          })
+          this.books = response.map(book => getUItext(book))
         })
       }
     },
