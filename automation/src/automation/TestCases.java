@@ -18,6 +18,8 @@ public class TestCases {
 		driver.get("http://localhost:8080/");
 		Thread.sleep(1000);
 		driver.navigate().to("http://localhost:8080/returnBook");
+		
+		System.out.println("Sucessfully launched browser!");
 	}
 	
 	public void fillForm() {
@@ -41,10 +43,14 @@ public class TestCases {
 		
 		Select rating = new Select(driver.findElement(By.id("formulate--returnBook-11")));
 		rating.selectByIndex(3);
+		
+		System.out.println("Filled in form!");
 	}
 	
 	public void clickSubmit() {
 		driver.findElement(By.cssSelector("button[name='Submit']")).click();
+		
+		System.out.println("Form submitted!");
 	}
 	
 	public void checkBookCreated() {
@@ -53,14 +59,20 @@ public class TestCases {
 		Actions act = new Actions(driver);
 		act.moveToElement(lastBook).perform();
 		lastBook.getText().contains("{ 'townResident': 'yes', 'amountRead': 'unread', 'timeToRead': 'twoTo3weeks', 'rating': 'two', 'name': 'John Doe', 'title': 'Goosebumps', 'author': 'RL Stein', 'numberOfPages': '265', 'dewey': '000.11.333', ");
+	
+		System.out.println("Book successfully added to list!");
 	}
 	
 	public void goToHomepage() {
 		driver.navigate().to("http://localhost:8080/");
+		
+		System.out.println("Able to go to homepage!");
 	}
 	
 	public void close() {
 		driver.quit();
+		
+		System.out.println("App works!");
 	}
 	
 
