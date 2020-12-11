@@ -13,13 +13,12 @@
 </template>
 
 <script>
-    import { getAllBooks, findCategory } from '../services/BookService'
+    import { getAllBooks, findCategory, findPagesRead } from '../services/BookService'
     import _ from 'underscore'
 
     export default {
         data() {
             return {
-                books: [],
                 totalPagesRead: 0,
                 pagesReadByCatergory: {},
             }
@@ -28,14 +27,9 @@
         {
             initializeBooks() {
                 getAllBooks().then(response => {
-                    this.books = response;
                     this.totalPagesRead = response.map((book) => {
-                        if (book.amountRead === "unread") book.pagesRead = 0;
-                        else if (book.amountRead === "partially") book.pagesRead = parseInt(book.numberOfPages)/2;
-                        else if (book.amountRead === "read") book.pagesRead = parseInt(book.numberOfPages);
-
+                        findPagesRead(book);
                         findCategory(book);
-
                         return parseInt(book.pagesRead)
                     })
                     .reduce((accumulator, currentValue) => { 

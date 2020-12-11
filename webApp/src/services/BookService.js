@@ -34,3 +34,11 @@ export function findCategory(book) {
 
     return book;
 }
+
+export function findPagesRead(book) {
+    if (book.amountRead === "unread") book.pagesRead = 0;
+    else if (book.amountRead === "partially") book.pagesRead = parseInt(book.numberOfPages) / 2;
+    else if (book.amountRead === "read") book.pagesRead = parseInt(book.numberOfPages);
+
+    return book;
+}
