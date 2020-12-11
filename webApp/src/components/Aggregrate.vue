@@ -43,7 +43,7 @@
                         })
                         .map(indy => {
                             if (indy.total.length > 1) {
-                                indy.total = parseInt(indy.total.reduce((a, b) => a.pagesRead + b.pagesRead));
+                                indy.total = parseInt(indy.total.map(a => a.pagesRead).reduce((a, b) => a + b));
                             } else if (indy.total.length === 1) {
                                 indy.total = parseInt(indy.total[0].pagesRead);
                             }
