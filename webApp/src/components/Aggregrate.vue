@@ -32,8 +32,8 @@
                         findCategory(book);
                         return parseInt(book.pagesRead)
                     })
-                    .reduce((accumulator, currentValue) => { 
-                        return parseInt(accumulator) + parseInt(currentValue)
+                    .reduce((a, b) => { 
+                        return parseInt(a) + parseInt(b)
                     });
 
                     
@@ -43,9 +43,9 @@
                         })
                         .map(indy => {
                             if (indy.total.length > 1) {
-                                indy.total = indy.total.reduce((a, b) => a.pagesRead + b.pagesRead)
+                                indy.total = parseInt(indy.total.reduce((a, b) => a.pagesRead + b.pagesRead));
                             } else if (indy.total.length === 1) {
-                                indy.total = indy.total[0].pagesRead;
+                                indy.total = parseInt(indy.total[0].pagesRead);
                             }
                             return indy;
                         })
