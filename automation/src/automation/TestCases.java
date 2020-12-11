@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class TestCases {
@@ -33,7 +34,7 @@ public class TestCases {
 		driver.findElement(By.id("formulate--returnBook-8")).sendKeys("000.11.333");
 		
 		Select amountRead = new Select(driver.findElement(By.id("formulate--returnBook-9")));
-		amountRead.selectByValue("unread");
+		amountRead.selectByValue("read");
 		
 		Select timeTaken = new Select(driver.findElement(By.id("formulate--returnBook-10")));
 		timeTaken.selectByVisibleText("2 to 3 weeks");
@@ -49,7 +50,13 @@ public class TestCases {
 	public void checkBookCreated() {
 		driver.findElement(By.linkText("Books")).click();
 		WebElement lastBook = driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/fieldset/div/ul/li[last()]"));
+		Actions act = new Actions(driver);
+		act.moveToElement(lastBook).perform();
 		lastBook.getText().contains("{ 'townResident': 'yes', 'amountRead': 'unread', 'timeToRead': 'twoTo3weeks', 'rating': 'two', 'name': 'John Doe', 'title': 'Goosebumps', 'author': 'RL Stein', 'numberOfPages': '265', 'dewey': '000.11.333', ");
+	}
+	
+	public void goToHomepage() {
+		driver.navigate().to("http://localhost:8080/");
 	}
 	
 	public void close() {

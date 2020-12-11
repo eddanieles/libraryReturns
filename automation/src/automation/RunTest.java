@@ -11,9 +11,12 @@ public class RunTest {
 		Thread.sleep(2000);	
 		
 		obj.clickSubmit();
-		Thread.sleep(1000);	
+		Thread.sleep(2000);	
 		
 		obj.checkBookCreated();
+		Thread.sleep(2000);	
+		
+		obj.goToHomepage();
 		Thread.sleep(2000);	
 		
 		obj.close();
