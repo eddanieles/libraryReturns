@@ -2,8 +2,13 @@
     <div>
         <div>
             Total Pages Read: {{totalPagesRead}}
-        </div>
-        <div>Pages Read per Category: {{pagesReadByCatergory}}</div>
+        </div><br>
+        <div>Pages Read per Category:</div>
+        <ul>
+            <li v-for="index in pagesReadByCatergory" :key="index.category">
+                {{index.name}} - {{index.total}}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -60,6 +65,9 @@
                                 indy.total = indy.total[0].pagesRead;
                             }
                             return indy;
+                        })
+                        .filter(indy => {
+                            if (indy.total > 0) return indy;
                         });
     
                 });

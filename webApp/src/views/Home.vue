@@ -18,7 +18,5 @@ export default {
 </script>
 
 <style>
-  fieldset {
-    text-align: left;
-  }
+
 </style>
