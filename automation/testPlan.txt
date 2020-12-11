@@ -2,29 +2,29 @@
 Run app on local machince, create an automated testing stack with Selenium webdriver.
 
 ### OBJECTIVES AND TASKS
-        - *Objectives*
-                Make sure app is functional.
-        - *Tasks*
-                Create test cases for app features.
+- **Objectives**
+Make sure app is functional.
+- **Tasks**
+Create test cases for app features.
         
 ### SCOPE
 
 ### Testing Strategy
-        - *Alpha Testing (Unit Testing)*
-        - *System and Integration Testing*
-        - *Performance and Stress Testing*
-        - *User Acceptance Testing*
-                manually submit form with any data.
-        - *Batch Testing*
-        - *Automated Regression Testing*
-                run Selenium Webdriver test. monitor automation, look for errors, validate automation.
-        - *Beta Testing*
+- **Alpha Testing (Unit Testing)**
+- **System and Integration Testing**
+- **Performance and Stress Testing**
+- **User Acceptance Testing**
+manually submit form with any data.
+- **Batch Testing**
+- **Automated Regression Testing**
+run Selenium Webdriver test. monitor automation, look for errors, validate automation.
+- **Beta Testing**
         
 ### Hardware Requirements
 
 ### Environment Requirements
-        - *Main Frame*
-        - *Workstation*
+- **Main Frame**
+- **Workstation**
         
 ### Test Schedule
 
