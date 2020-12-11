@@ -30,10 +30,14 @@
                     <FormulateInput
                         name="numberOfPages"
                         label="Number of Pages:"
+                        validation="optional|number|matches:/^[1-9]\d*$/"
+                        :validation-messages="{matches: 'Must be a positive whole number.', number: 'Value must be a number.'}"
                     />
                     <FormulateInput
                         name="dewey"
                         label="Dewey Decimal Number:"
+                        validation="optional|min:3,length|matches:/^[0-9]/"
+                        :validation-messages="{matches: 'Value must start with number.', min: 'DDN must be at least 3 characters.'}"
                     />
                     <FormulateInput
                         type="select"
