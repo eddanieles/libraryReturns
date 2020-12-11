@@ -13,14 +13,13 @@
 </template>
 
 <script>
-    import { getAllBooks, deweyCategories } from '../services/BookService'
+    import { getAllBooks, findCategory } from '../services/BookService'
     import _ from 'underscore'
 
     export default {
         data() {
             return {
                 books: [],
-                cats: deweyCategories,
                 totalPagesRead: 0,
                 pagesReadByCatergory: {},
             }
@@ -35,17 +34,7 @@
                         else if (book.amountRead === "partially") book.pagesRead = parseInt(book.numberOfPages)/2;
                         else if (book.amountRead === "read") book.pagesRead = parseInt(book.numberOfPages);
 
-                        if (!book.dewey) book.category = "Category Not Provided"
-                        else if (/^0/.test(book.dewey)) book.category = this.cats["000"];
-                        else if (/^1/.test(book.dewey)) book.category = this.cats["100"];
-                        else if (/^2/.test(book.dewey)) book.category = this.cats["200"];
-                        else if (/^3/.test(book.dewey)) book.category = this.cats["300"];
-                        else if (/^4/.test(book.dewey)) book.category = this.cats["400"];
-                        else if (/^5/.test(book.dewey)) book.category = this.cats["500"];
-                        else if (/^6/.test(book.dewey)) book.category = this.cats["600"];
-                        else if (/^7/.test(book.dewey)) book.category = this.cats["700"];
-                        else if (/^8/.test(book.dewey)) book.category = this.cats["800"];
-                        else if (/^9/.test(book.dewey)) book.category = this.cats["900"];
+                        findCategory(book);
 
                         return parseInt(book.pagesRead)
                     })
