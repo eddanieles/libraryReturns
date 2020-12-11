@@ -6,18 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class submitForm {
+public class TestCases {
 	
 	WebDriver driver;
 	
-	public void LaunchBrowser() throws InterruptedException {
-		
+	
+	public void launchBrowser() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver = new ChromeDriver();
 		driver.get("http://localhost:8080/");
 		Thread.sleep(1000);
 		driver.navigate().to("http://localhost:8080/returnBook");
-		
 	}
 	
 	public void fillForm() {
@@ -57,21 +56,5 @@ public class submitForm {
 		driver.quit();
 	}
 	
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		
-		submitForm obj = new submitForm();
-		obj.LaunchBrowser();
-		obj.fillForm();
-		Thread.sleep(2000);	
-		
-		obj.clickSubmit();
-		Thread.sleep(1000);	
-		
-		obj.checkBookCreated();
-		Thread.sleep(2000);	
-		
-		obj.close();
-	}
 
 }
