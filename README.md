@@ -8,7 +8,7 @@ The repo includes three separate projects that work together with each other:
 
 ---
 
-### to run code
+### Run Code
 1. clone repo
 2. cd into repo folder via terminal
 3. run web application via terminal:
@@ -29,7 +29,7 @@ The initial data is static and any submitted data is stored on a localhost:3080 
  
 ---
 
-### to run selenium webdriver test
+### Start Automation
 The app is not deployed, so you need to have the web application and api running on your local machine, in order to run the test automation.
 
 1. go to code editor ide (I like esclipse)
