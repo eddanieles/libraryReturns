@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            Total Pages Read: <div id="totalPagesRead">{{totalPagesRead}}</div> 
+            Total Pages Read: <span id="totalPagesRead">{{totalPagesRead}}</span> 
         </div><br>
         <div>Pages Read per Category:</div>
         <ul id="pagesReadByCategory">
