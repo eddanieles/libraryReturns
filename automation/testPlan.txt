@@ -35,8 +35,10 @@ run Selenium Webdriver test. monitor automation, look for errors, validate autom
 - user is able to navigate pages
 - user can view number of pages read
 - user can fill in form 
+- form validation, incorrect or null values
 - form submits successfully
 - user can view list books
+- number of pages read is updated after form is submitted
 - user can submit addition book via the form
 
 ### Features Not to Be Tested
@@ -52,10 +54,11 @@ run Selenium Webdriver test. monitor automation, look for errors, validate autom
 ### Significantly Impacted Departments (SIDs)
 
 ### Dependencies
-- npm
-- node
-- java
-- selenium webdriver
+- npm (6.4.1)
+- node (v8.12.0)
+- java (15.0.1)
+- selenium webdriver (selenium-java-3.141.59)
+The version numbers are what my computer currently has installed.
 
 ### Risks/Assumptions
 App crashes while in use. User can submit form with null values. Issues submitting the form. Issues viewing data.
