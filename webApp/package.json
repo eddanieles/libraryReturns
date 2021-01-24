@@ -10,7 +10,7 @@
   "dependencies": {
     "@braid/vue-formulate": "^2.4.5",
     "@vue/cli": "^4.5.9",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "mongodb": "^3.6.3",
     "underscore": "^1.12.0",
