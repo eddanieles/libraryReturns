@@ -1,5 +1,5 @@
 # kin QA Challenge
-Creating this project certainly had it's difficulties. However, I am happy to say that it's a fully functioning app with a testing stack. I wish I had more time to update the css but it's usable. [Click here](https://www.loom.com/share/5367f8145238420cb52a62461a7ce6ae) to view a video of the app successfully working.
+Creating this project certainly had it's difficulties. However, I am happy to say that it's a fully functioning app with a testing stack. I wish I had more time to update the css but it's usable. I did focus more on the front end application then I did the testing stack. As I was fine tuning the app, I did run across edge cases that I fixed as I was coding the app. Because I was focused on fixing bugs, there is a severe lack of comments within the code. I would be happy to explain the code during the follow up review. [Click here](https://www.loom.com/share/5367f8145238420cb52a62461a7ce6ae) to view a video of the app successfully working.
 
 The repo includes three separate projects that work together with each other:
 - a front end web application created with Vue JS
